@@ -49,3 +49,12 @@
 #### regarder statut des tables
     php artisan migrate:status
 
+# RELATIONS ELOQUENT 
+    Plus besoin de gérer manuellement la jointure SQL.
+#### hasMany()
+    exemple
+        -côté User : un utilisateur a plusieurs tickets → hasMany()
+
+#### belongsTo()
+    exemple
+        -côté Ticket : un ticket appartient à un utilisateur → belongsTo()

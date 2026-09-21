@@ -49,6 +49,11 @@
 #### regarder statut des tables
     php artisan migrate:status
 
+#### activer les routes API
+    php artisan install:api
+
+
+
 # RELATIONS ELOQUENT 
     Plus besoin de gérer manuellement la jointure SQL.
 #### hasMany()
@@ -58,3 +63,8 @@
 #### belongsTo()
     exemple
         -côté Ticket : un ticket appartient à un utilisateur → belongsTo()
+
+
+
+# SANCTUM
+    va nous permettre de gérer l'authentification de notre API

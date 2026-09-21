@@ -29,12 +29,22 @@
 #### down
     annuler un changement
 
+#### fillable 
+    dans un modèle pour définir les champs autorisés lors d'une création :
+    sert à définir quels champs d'un modèle peuvent être remplis automatiquement avec des données
+
+#### plainTextToken 
+    sert à récupérer le token d'API en clair
+
 
 
 # COMMANDES
-##### creation modele et migration
+##### creation modele et migration 
     php artisan make:model --help 
     php artisan make:model nom_du_table --migration
+
+##### creation controller
+    php artisan make:controller nom 
 
 ##### migrer la table creer
     php artisan make:migration --help 
@@ -68,3 +78,16 @@
 
 # SANCTUM
     va nous permettre de gérer l'authentification de notre API
+    exemple :
+
+    Utilisateur
+        ↓
+    POST /api/login
+        ↓
+    Laravel vérifie email + mot de passe
+        ↓
+    Sanctum crée un token
+        ↓
+    Client Vue reçoit le token
+        ↓
+    Client utilise le token pour accéder aux routes protégées

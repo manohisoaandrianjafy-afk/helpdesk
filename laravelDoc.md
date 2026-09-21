@@ -95,3 +95,16 @@
 # HASH
     -Hash::make()->Hasher quelque chose
     -Hash::check()->Verifier 
+
+# MIDDLEWARE
+    -intercepter la requête avant qu'elle arrive au contrôleur.
+    exemple
+    Requête
+        ↓
+    auth:sanctum
+        ↓
+    role:admin
+        ↓
+    Controller
+
+    -php artisan make:middleware RoleMiddleware

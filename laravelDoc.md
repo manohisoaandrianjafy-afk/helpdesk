@@ -91,3 +91,7 @@
     Client Vue reçoit le token
         ↓
     Client utilise le token pour accéder aux routes protégées
+
+# HASH
+    -Hash::make()->Hasher quelque chose
+    -Hash::check()->Verifier 

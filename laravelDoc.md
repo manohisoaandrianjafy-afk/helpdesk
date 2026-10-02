@@ -108,3 +108,6 @@
     Controller
 
     -php artisan make:middleware RoleMiddleware
+
+# Faire un view
+    php artisan make:view ticket

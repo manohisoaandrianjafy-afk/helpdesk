@@ -27,3 +27,7 @@
 
 ### localStorage
     permet de conserver une donnée dans le navigateur 
+
+### Redirection de page
+    avec laravel :  window.location.href = '/tickets';
+    avec un vue router : router.push("/tickets");

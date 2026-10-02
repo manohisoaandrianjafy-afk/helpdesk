@@ -2,6 +2,9 @@
 import { ref } from 'vue';
 const email = ref('');
 const password = ref('');
+// import { useRouter } from "vue-router";
+// const router = useRouter();
+
 function login() {
     fetch('/api/login', {
         method: 'POST',
@@ -18,24 +21,10 @@ function login() {
             console.log('Utilisateur :', data.user);
             console.log('Token reçu :', data.token);
             localStorage.setItem('token', data.token);
+            // router.push("/tickets");
+            window.location.href = '/tickets';
         });
 }
-
-function getTickets() {
-    const token = localStorage.getItem('token');
-    fetch('/api/tickets', {
-        method: 'GET',
-        headers: {
-            'Accept': 'application/json',
-            'Authorization': `Bearer ${token}`
-        }
-    })
-        .then(response => response.json())
-        .then(data => {
-            console.log('Tickets :', data);
-        });
-}
-
 
 </script>
 
@@ -45,7 +34,6 @@ function getTickets() {
     <p>Email : {{ email }}</p>
     <p>Password : {{ password }}</p>
     <button @click="login">Se connecter</button>
-    <button @click="getTickets">Mes tickets</button>
 </template>
 
 <style>

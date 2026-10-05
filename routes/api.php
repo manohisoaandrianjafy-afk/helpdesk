@@ -14,3 +14,9 @@ Route::get('/tickets', function (Request $request) {
 
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
+
+Route::get('/admin-test', function () {
+    return response()->json([
+        'message' => 'Bienvenue administrateur'
+    ]);
+})->middleware(['auth:sanctum', 'role:admin']);

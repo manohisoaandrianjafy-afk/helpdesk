@@ -15,6 +15,14 @@ class RoleMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        return $next($request);
+
+        if ($request->user()->role === 'admin') {
+            return $next($request);
+        } else {
+            return response()->json([
+                'message' => 'Tu es authentifié, mais tu n as pas le droit.'
+            ], 403);
+        }
+
     }
 }

@@ -2,24 +2,6 @@
 import { ref, onMounted } from 'vue';
 
 const tickets = ref([]);
-
-// function getTickets() {
-//     const token = localStorage.getItem('token');
-//     fetch('/api/tickets', {
-//         method: 'GET',
-//         headers: {
-//             'Accept': 'application/json',
-//             'Authorization': `Bearer ${token}`
-//         }
-//     })
-//         .then(response => response.json())
-//         .then(data => {
-//             console.log('Tickets :', data);
-//             tickets.value = data;
-//         });
-// }
-
-
 onMounted(async () => {
     try {
         const token = localStorage.getItem('token');
@@ -55,11 +37,22 @@ async function deleteTicket(id) {
     console.log(data);
 }
 
+async function modifierTicket() {
+    const token = localStorage.getItem('token');
+    window.location.href = '/formTicket';
+}
+
+async function directionCreationTicket() {
+    const token = localStorage.getItem('token');
+    window.location.href = `/formTicket?token=${token}`;
+}
+
 </script>
 
 <template>
     <div v-if="tickets.length > 0">
         <h2>Mes tickets</h2>
+        <button @click="directionCreationTicket()">Creer Ticket</button>
         <table border="1">
             <thead>
                 <tr>
@@ -77,7 +70,8 @@ async function deleteTicket(id) {
                     <td>{{ ticket.statut }}</td>
                     <td>{{ ticket.priorite }}</td>
                     <td><button @click="deleteTicket(ticket.id)">Supprimer</button><br>
-                        <router-link :to="`/formTicket/${ticket.id}`">Modifier</router-link>
+                        <!-- <router-link :to="`/formTicket/${ticket.id}`">Modifier</router-link> -->
+                        <button @click="modifierTicket()">Modifier</button>
                     </td>
                 </tr>
             </tbody>

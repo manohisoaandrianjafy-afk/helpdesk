@@ -1,0 +1,9 @@
+ http://127.0.0.1:8000/api/creationTicket?nom=test&description=testfotsiny&status=OPEN&priorite=LOW&user_id=1&category_id=1&agent_id=null
+
+     'nom' => $request->nom,
+                'description' => $request->description,
+                'status' => $request->status,
+                'priorite' => $request->priorite,
+                'user_id' => 1,
+                'category_id' => $request->category_id,
+                'agent_id' => null

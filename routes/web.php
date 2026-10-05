@@ -9,3 +9,7 @@ Route::get('/', function () {
 Route::get('/tickets', function () {
     return view('ticket');
 });
+
+Route::get('/formTicket', function () {
+    return view('formTicket');
+});

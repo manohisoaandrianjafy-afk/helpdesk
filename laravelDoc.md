@@ -21,10 +21,15 @@
 ##### Factory
     Factory sert à définir comment générer automatiquement des 
     données de test pour un Model c'est a dire COMMENT fabriquer des données
+    php artisan make:factory TicketFactory --model=Ticket
 
 ##### Seeders
     Les seeders permettent de remplir la base avec des données initiales ou de démonstration.
     Décide notamment quand et combien en créer.
+    php artisan make:seeder TicketSeeder 
+
+##### Lancer un seeder
+    php artisan db:seed --class=CategorySeeder
 
 #### down
     annuler un changement

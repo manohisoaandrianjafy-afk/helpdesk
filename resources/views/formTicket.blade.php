@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <div id="ticket"></div>
+    <div id="formTicket"></div>
 </body>
 
 </html>
